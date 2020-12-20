@@ -9,11 +9,7 @@ from butil import dpr
 # info about mods
 
 MOD_INFO = [
-   ("mod1", "fairly generic mod"),
    ("mod_subg", "adds <subg> file"),
-   ("Atlantis", "new nation Atlantis"),
-   ("BigYamato", "large Japanese BB Yamato"),
-
 ]
 
 modInfo = dict((k,v) for k,v in MOD_INFO)

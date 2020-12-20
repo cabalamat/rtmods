@@ -30,6 +30,13 @@ def padRight(s: str, n: int) -> str:
     if len(s) >= n: return s
     return s + (" "*(n-len(s)))
 
+def forceMakeDestDir(destFile: pathlib.Path):
+    """ force the creation of all directories above the file (destFile).
+    If the directories already exist, silently do nothing.
+    """
+    destDir = destFile.parent
+    destDir.mkdir(parents=True, exist_ok=True)
+
 def copyIntoTree(src: str, dst: str):
     """ Copy files from directory structure (src) into directory 
     structure (dst), creating directories and over-writing files 
@@ -55,6 +62,7 @@ def copyIntoTree(src: str, dst: str):
         dpr("dstForFile=%r", dstForFile)
         if verbosity>=2:
             prn("Copying {} to {}...", str(srcFile), str(dstForFile))
+        forceMakeDestDir(dstForFile)    
         shutil.copyfile(str(srcFile), str(dstForFile))
     #//for srcFile    
         
