@@ -38,8 +38,8 @@ That's it! Rtmods is now ready to run.
 ## Directories used
 
 * `C:\cab\rtmods\` = the top direcotry fo the Rtmods program.
-* `C:\cab\rtmods\mods\` = Each mod goes under here in a separate dorectory hierarchy
-* `C:\cab\rtmods\mods\invasion_range\` = the invasion_range mod
+* `C:\cab\rtmods\mods\` = Each mod goes under here in a separate directory hierarchy
+* For example, `C:\cab\rtmods\mods\invasion_range\` is the invasion_range mod
 * `C:\cab\clean_rtw\` = this is a clean copy of Rule the Waves II
 * `C:\cab\modded_rtw\` = this is a copy of Rule the Waves II, with some mods added
 
@@ -85,7 +85,7 @@ Then install all the mods you want to, one at a time:
     > python rtmods.py --add mod2
     > python rtmods.py --add mod3
     
-Then play the game by running the RTW executable in modded_rtw
+Then play the game by running the RTW executable in `C:\cab\modded_rtw\RTW2.exe`.
 
 ## Future enhancements
 
