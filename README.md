@@ -20,7 +20,41 @@ Rtmods requires Python 3.8 or later, plus a copy of Rule the Waves 2.
 
 ## Installation
 
+First install [Python](https://www.python.org/) 
+and [Git](https://git-scm.com/) on your system.
+
+Then create the directory `C:\cab\`. In this directory, use git to download Rtmods:
+
+```
+C:\cab> git clone git@github.com:cabalamat/rtmods.git
+```
+
+This downloads RTmods from Github into `C:\cab\rtmods`.
+
+Now create a clean copy of Rule the Waves II into `C:\cab\clean_rtw\`.
+
+That's it! Rtmods is now ready to run. 
+
+## Directories used
+
+* `C:\cab\rtmods\` = the top direcotry fo the Rtmods program.
+* `C:\cab\rtmods\mods\` = Each mod goes under here in a separate dorectory hierarchy
+* `C:\cab\rtmods\mods\invasion_range\` = the invasion_range mod
+* `C:\cab\clean_rtw\` = this is a clean copy of Rule the Waves II
+* `C:\cab\modded_rtw\` = this is a copy of Rule the Waves II, with some mods added
+
 ## How it works
+
+There are essentially two operations that Rtmods can perform:
+
+**Reset the modded_rtw**. The `--reset` command, which deletes `modded_rtw\` 
+and copies `clean_rtw` over it. This makes `modded_rtw\` back into a pristine 
+copy of the game.
+
+**Add a mod**, usingf the `--add` command. After you have reset the `modded_rtw\`, 
+you can then add mods to it one at a time. Adding a mod works by looksing at the 
+mod's directory under `C:\cab\rtmods\mods\` and copying the files (asnd their 
+directories) found there into `modded_rtw\`.
 
 ## Use
 
@@ -52,5 +86,19 @@ Then install all the mods you want to, one at a time:
     > python rtmods.py --add mod3
     
 Then play the game by running the RTW executable in modded_rtw
+
+## Future enhancements
+
+I might add a web-based interface for it, running on localhost.
+
+This would list the mods available, display their descriptions and any instructions
+for them. There would be hyperlinks to the mod's homepage, if any.
+
+At the moment Rtmods doesn't remember what mods have been added to `modded_rtw\`.
+This feature could be addedm, and then the program would be able to
+display a log of what mods you have already added.
+
+There will also be a short guide on how to write a mod and put it on the system.
+
 
 /end/
