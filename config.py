@@ -10,6 +10,7 @@ from butil import dpr
 
 MOD_INFO = [
    ("mod_subg", "adds <subg> file"),
+   ("invasion_range", "increased invasion ranges"),
 ]
 
 modInfo = dict((k,v) for k,v in MOD_INFO)

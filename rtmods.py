@@ -89,16 +89,18 @@ def resetModdedRtw():
     
     #>>>>> first remove the existing modded_rtw
     try:
+        prn("Removing existing {}...", MODDED_RTW_DIR)
         shutil.rmtree(MODDED_RTW_DIR)
     except Exception as ex:
         prn("On removal of {}, exception:\n{}", MODDED_RTW_DIR, ex)
         
     #>>>>> now we can copy clean_rtw into modded_rtw:
-    if verbosity:
-        prn("Resetting RTW; copying {} to {} ...",
-            CLEAN_RTW_DIR, 
-            MODDED_RTW_DIR)
+
+    prn("Resetting RTW; copying {} to {} ...",
+        CLEAN_RTW_DIR, 
+        MODDED_RTW_DIR)
     shutil.copytree(CLEAN_RTW_DIR, MODDED_RTW_DIR)
+    prn("Finished.")
     
 
 def addMod(m: str):
@@ -129,7 +131,7 @@ def main():
     parser.add_argument("-i", "--info", type=str, metavar="MOD",
         help="Display info about a particular mod")
     parser.add_argument("--reset", action='store_true',
-        help="Reset modded_rtw from clean_rtw")
+        help="Reset modded_rtw from clean_rtw (may take some time)")
     parser.add_argument("--add", type=str, metavar="MOD",
         help="Add a mod to modded_rtw")
     
