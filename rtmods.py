@@ -94,6 +94,10 @@ def resetModdedRtw():
         prn("On removal of {}, exception:\n{}", MODDED_RTW_DIR, ex)
         
     #>>>>> now we can copy clean_rtw into modded_rtw:
+    if verbosity:
+        prn("Resetting RTW; copying {} to {} ...",
+            CLEAN_RTW_DIR, 
+            MODDED_RTW_DIR)
     shutil.copytree(CLEAN_RTW_DIR, MODDED_RTW_DIR)
     
 
