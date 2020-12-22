@@ -6,7 +6,7 @@ import shutil
 import pathlib
 
 import butil
-from butil import pr, prn, dpr
+from butil import pr, prn, dpr, join
 import config
 from config import (modInfo, LINUX, 
     MODS_DIR, CLEAN_RTW_DIR, MODDED_RTW_DIR)
@@ -69,6 +69,57 @@ def copyIntoTree(src: str, dst: str):
 
 #---------------------------------------------------------------------
 
+def isValidModName(mn: str) -> bool:
+    """ Is (mn) a valid module name? Valid mod names:
+    * are 1-32 chars long
+    * contain only lower case letters (a-z), digits (0-9) and the 
+      underline ("_") char 
+    """
+    if len(mn)<1: return False
+    if len(mn)>32: return False
+    for ch in mn:
+        if ch not in "abcdefghijklmnopqrstuvwxyz0123456789_":
+            return False
+    return True    
+
+def getModNames() -> List[str]:
+    """ Return all the valid mod names """  
+    modsP = pathlib.Path(MODS_DIR)
+    modDocs = modsP.glob("*.md") # module documentation files
+    dpr("modDocs=%r", modDocs)
+    modNames = []
+    for modDoc in modDocs:
+        modName = modDoc.stem
+        dpr("modName=%r", modName)
+        if not isValidModName(modName):
+            prn("mod name '{}' is invalid", modName)
+            continue
+        modDir = modsP / modName
+        modDirStr = str(modDir)
+        dpr("modDir=%r modDirStr=%r", modDir, modDirStr)
+        ex = butil.dirExists(modDirStr)
+        dpr("directory exists? ex=%r", ex) 
+        if ex: modNames += [modName]
+    #//for modDoc  
+    return modNames
+    
+def makeModList(): 
+    """ creates the value of (modInfo) based on contents of the mod/ 
+    directory.
+    
+    Every mod must have a {MOD}.md file and a {MOD}/ directory, where
+    "{MOD}" must be the name of the mod. Mod names:
+    
+    * are 1-32 chars long
+    * contain only lower case letters (a-z), digits (0-9) and the 
+      underline ("_") char
+    """   
+    modNames = getModNames()
+    dpr("modNames=%r", modNames)
+
+#---------------------------------------------------------------------
+# commands from command line
+
 def listMods():
     """ list mods avaialble """
     prn("List of all the mods...")
@@ -122,6 +173,9 @@ def addMod(m: str):
 
 def main():
     global verbosity
+    
+    makeModList()
+    
     parser = argparse.ArgumentParser(description=
         "*** Rule the Mods -- a mod manager for RTW2 ***")
     parser.add_argument("-v", "--verbose", action="count",

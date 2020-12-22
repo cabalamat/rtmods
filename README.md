@@ -35,13 +35,20 @@ Now create a clean copy of Rule the Waves II into `C:\cab\clean_rtw\`.
 
 That's it! Rtmods is now ready to run. 
 
-## Directories used
+## Directories and files used
 
-* `C:\cab\rtmods\` = the top direcotry fo the Rtmods program.
+* `C:\cab\rtmods\` = the top directory fo the Rtmods program
+* `C:\cab\rtmods\rtmods.py` = the executable for the Rtmods program
+* `C:\cab\rtmods\README.md` = this file you are now reading
 * `C:\cab\rtmods\mods\` = Each mod goes under here in a separate directory hierarchy
-* For example, `C:\cab\rtmods\mods\invasion_range\` is the invasion_range mod
 * `C:\cab\clean_rtw\` = this is a clean copy of Rule the Waves II
 * `C:\cab\modded_rtw\` = this is a copy of Rule the Waves II, with some mods added
+
+For each mod there is a mod directory and a mod documatation file, for 
+example the invasion-range mod has:
+
+* `C:\cab\rtmods\mods\invasion_range.md` = the mod's documentation file
+* `C:\cab\rtmods\mods\invasion_range\` = the mod directory
 
 ## How it works
 

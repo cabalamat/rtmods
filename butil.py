@@ -53,7 +53,7 @@ def fileExists(fn: str) -> bool:
     return stat.S_ISREG(mode)
 
 def dirExists(pn: str) -> bool:
-    """ Does a file exist?
+    """ Does a directory exist?
     @param pn  = a pathname
     @return = True if (fn) is the filename of an existing file
         and it is readable.
@@ -64,7 +64,7 @@ def dirExists(pn: str) -> bool:
     # testing that separately)
     if not readable: return False
 
-    # now test if it's a file
+    # now test if it's a directory
     mode = os.stat(pn2)[stat.ST_MODE]
     return stat.S_ISDIR(mode)
 
