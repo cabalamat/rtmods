@@ -8,10 +8,11 @@ import pathlib
 import butil
 from butil import pr, prn, dpr, join
 import config
-from config import (modInfo, LINUX, 
+from config import (LINUX, 
     MODS_DIR, CLEAN_RTW_DIR, MODDED_RTW_DIR)
 
 verbosity = 0
+modInfo = {}
 
 #---------------------------------------------------------------------
 # utility functions
@@ -85,23 +86,36 @@ def isValidModName(mn: str) -> bool:
 def getModNames() -> List[str]:
     """ Return all the valid mod names """  
     modsP = pathlib.Path(MODS_DIR)
-    modDocs = modsP.glob("*.md") # module documentation files
-    dpr("modDocs=%r", modDocs)
+    modDocs = modsP.glob("*.md") # mod documentation files
+    #dpr("modDocs=%r", modDocs)
     modNames = []
     for modDoc in modDocs:
         modName = modDoc.stem
-        dpr("modName=%r", modName)
+        #dpr("modName=%r", modName)
         if not isValidModName(modName):
             prn("mod name '{}' is invalid", modName)
             continue
         modDir = modsP / modName
         modDirStr = str(modDir)
-        dpr("modDir=%r modDirStr=%r", modDir, modDirStr)
+        #dpr("modDir=%r modDirStr=%r", modDir, modDirStr)
         ex = butil.dirExists(modDirStr)
-        dpr("directory exists? ex=%r", ex) 
+        #dpr("directory exists? ex=%r", ex) 
         if ex: modNames += [modName]
     #//for modDoc  
     return modNames
+
+def getModDesc(modName: str) -> str:
+    """ Get the description of a mod from its name. The description
+    comes from the first line of the mod's documentation file.
+    """
+    modFnP = pathlib.Path(MODS_DIR) / (modName+".md")
+    modFn = str(modFnP)
+    modDoc = butil.readFile(modFn)
+    line1 = modDoc.splitlines()[0]
+    s = line1[1:].strip()
+    if s.startswith(modName):
+        s = s[len(modName):].strip()
+    return s
     
 def makeModList(): 
     """ creates the value of (modInfo) based on contents of the mod/ 
@@ -114,8 +128,12 @@ def makeModList():
     * contain only lower case letters (a-z), digits (0-9) and the 
       underline ("_") char
     """   
+    global modInfo
     modNames = getModNames()
-    dpr("modNames=%r", modNames)
+    #dpr("modNames=%r", modNames)
+    modInfo = dict((modName, getModDesc(modName)) 
+                   for modName in modNames)
+    #dpr("modInfo=%r", modInfo)
 
 #---------------------------------------------------------------------
 # commands from command line
@@ -123,8 +141,8 @@ def makeModList():
 def listMods():
     """ list mods avaialble """
     prn("List of all the mods...")
-    for k,v in sorted_kv(config.modInfo):
-        prn("{}= {}", padRight(k,15), v) 
+    for k,v in sorted_kv(modInfo):
+        prn("{} {}", padRight(k,15), v) 
     #//for    
     
 def infoMod(m: str):

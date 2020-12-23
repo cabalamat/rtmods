@@ -6,16 +6,6 @@ import butil
 from butil import dpr
 
 #---------------------------------------------------------------------
-# info about mods
-
-MOD_INFO = [
-   ("invasion_range", "Increased invasion ranges"),
-   ("ai_ships", "Lots of AI ships including some very big ones"),
-]
-
-modInfo = dict((k,v) for k,v in MOD_INFO)
-
-#---------------------------------------------------------------------
 
 LINUX = 'linux' in sys.platform
 

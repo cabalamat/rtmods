@@ -9,5 +9,7 @@ Instead of the list of mods being hard-coded in `config.py`, pick it up from
 
 Each mod needs a {MOD}.md file and a {MOD}/ directory.
 
+--done.
+
 
 /end/

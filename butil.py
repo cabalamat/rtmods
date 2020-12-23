@@ -88,6 +88,28 @@ def getFilenames(dir: str, pattern:str="*") -> List[str]:
     return matching
 
 #---------------------------------------------------------------------
+# read and write files:
+
+def readFile(filename: str) -> str:
+    pn = normalizePath(filename)
+    f = open(pn, 'r')
+    s = f.read()
+    f.close()
+    return s
+
+
+def writeFile(filename: str, newValue: str):
+    pn = normalizePath(filename)
+    # create directories if they don't exist
+    dirName = os.path.dirname(pn)
+    if dirName:
+        if not entityExists(dirName):
+            os.makedirs(dirName)
+    f = open(pn, 'w')
+    f.write(newValue)
+    f.close()
+
+#---------------------------------------------------------------------
 # formatting functions
 
 def form(fs:str, *args, **kwargs) -> str:
