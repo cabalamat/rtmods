@@ -102,7 +102,7 @@ This would list the mods available, display their descriptions and any instructi
 for them. There would be hyperlinks to the mod's homepage, if any.
 
 At the moment Rtmods doesn't remember what mods have been added to `modded_rtw\`.
-This feature could be addedm, and then the program would be able to
+This feature could be added, and then the program would be able to
 display a log of what mods you have already added.
 
 There will also be a short guide on how to write a mod and put it on the system.

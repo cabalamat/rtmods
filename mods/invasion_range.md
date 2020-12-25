@@ -1,8 +1,10 @@
 # invasion_range = increased invasion ranges
 
 * By: cabalamat
+* Added to Rtmods by: cabalamat
 * Version: 1.0
 * Date: 2020-Dec-11
+* Date added to Rtmods: 2020-Dec-11
 
 The **invasion_range** mod increases the ranges at which invasions 
 are possible. The purpose is to make invasions easier.
