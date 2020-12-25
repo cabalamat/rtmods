@@ -13,7 +13,11 @@ Each mod needs a {MOD}.md file and a {MOD}/ directory.
 
 # 2020-Dec-25 - historical 1936 start
 
-Adding `hist1936` etc mods for a historical 1936 start. 
+Added `hist1936` etc mods for a historical 1936 start:
+
+* `hist1936`
+* `hist1936_italy` = Italy
+* `hist1936_usa` = USA
 
 
 /end/
