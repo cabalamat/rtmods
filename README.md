@@ -16,7 +16,11 @@ process.
 
 ## Dependencies
 
-Rtmods requires Python 3.8 or later, plus a copy of Rule the Waves 2.
+Rtmods requires:
+
+* a copy of Rule the Waves 2
+* Python 3.8 or later
+* Git
 
 ## Installation
 
@@ -26,10 +30,10 @@ and [Git](https://git-scm.com/) on your system.
 Then create the directory `C:\cab\`. In this directory, use git to download Rtmods:
 
 ```
-C:\cab> git clone git@github.com:cabalamat/rtmods.git
+C:\cab> git clone https://github.com/cabalamat/rtmods.git
 ```
 
-This downloads RTmods from Github into `C:\cab\rtmods`.
+This downloads Rtmods from Github into `C:\cab\rtmods`.
 
 Now create a clean copy of Rule the Waves II into `C:\cab\clean_rtw\`.
 

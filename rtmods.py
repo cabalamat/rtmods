@@ -43,29 +43,27 @@ def copyIntoTree(src: str, dst: str):
     structure (dst), creating directories and over-writing files 
     where necessary.
     """
+    numFilesCopied = 0
     srcP = pathlib.Path(src)
     dstP = pathlib.Path(dst)
-    dpr("srcP=%r", srcP)
+    #dpr("srcP=%r", srcP)
     srcFilesDirs = list(srcP.rglob("*"))
-    dpr("srcFilesDirs=%r", srcFilesDirs)
-    for fd in srcFilesDirs:
-        dpr("fd=%r", fd)
-        dpr("fd2=%r", str(fd))
-    #//for    
     
     srcFiles = [f for f in srcFilesDirs
                 if butil.fileExists(str(f))]
-    dpr("srcFiles=%r", list(srcFiles))
+    #dpr("srcFiles=%r", list(srcFiles))
     for srcFile in srcFiles:
         relPath = srcFile.relative_to(srcP)
-        dpr("relPath=%r", relPath)
+        #dpr("relPath=%r", relPath)
         dstForFile = dstP / relPath
-        dpr("dstForFile=%r", dstForFile)
+        #dpr("dstForFile=%r", dstForFile)
         if verbosity>=2:
             prn("Copying {} to {}...", str(srcFile), str(dstForFile))
         forceMakeDestDir(dstForFile)    
         shutil.copyfile(str(srcFile), str(dstForFile))
-    #//for srcFile    
+        numFilesCopied += 1
+    #//for srcFile
+    prn("Copied {} files.", numFilesCopied)
         
 
 #---------------------------------------------------------------------
@@ -164,12 +162,11 @@ def resetModdedRtw():
         prn("On removal of {}, exception:\n{}", MODDED_RTW_DIR, ex)
         
     #>>>>> now we can copy clean_rtw into modded_rtw:
-
     prn("Resetting RTW; copying {} to {} ...",
         CLEAN_RTW_DIR, 
         MODDED_RTW_DIR)
     shutil.copytree(CLEAN_RTW_DIR, MODDED_RTW_DIR)
-    prn("Finished.")
+    prn("Finished!")
     
 
 def addMod(m: str):
@@ -177,14 +174,13 @@ def addMod(m: str):
     if m not in modInfo:
         prn("There is no mod '{}'", m)
         return
-        
-    prn("!!!! TODO: adding mod {}", m)    
     
     modDir = butil.join(MODS_DIR, m)
     if not butil.dirExists(modDir):
         prn("ERROR: Mod directory {} does not exist, aborting", modDir) 
     
     copyIntoTree(modDir, MODDED_RTW_DIR)
+    prn("Mod {} installed!", m)
     
 
 #---------------------------------------------------------------------
