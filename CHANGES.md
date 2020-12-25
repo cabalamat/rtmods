@@ -20,6 +20,7 @@ Added `hist1936` etc mods for a historical 1936 start:
 * `hist1936_usa` = USA
 * `hist1936_uk` = UK
 * `hist1936_ussr` = USSR
+* `hist1936_japan` = Japan
 
 
 /end/
