@@ -1,4 +1,4 @@
-# README.md for rtmods
+# README.md for Rtmods
 
 **Rtmods** (for "Rule the mods") is a modification installer/manager for 
 Rule the Waves 2.

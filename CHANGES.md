@@ -11,5 +11,9 @@ Each mod needs a {MOD}.md file and a {MOD}/ directory.
 
 --done.
 
+# 2020-Dec-25 - historical 1936 start
+
+Adding `hist1936` etc mods for a historical 1936 start. 
+
 
 /end/
