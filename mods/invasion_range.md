@@ -1,9 +1,11 @@
 # invasion_range = increased invasion ranges
 
-The **invasion_range** mode inmcreases the ranges at which invasions 
-are possible. 
+* By: cabalamat
+* Version: 1.0
+* Date: 2020-Dec-11
 
-The purpose is to make invasions easier.
+The **invasion_range** mod increases the ranges at which invasions 
+are possible. The purpose is to make invasions easier.
 
 It does this by altering the due-dates for technologies in 
 Amphibious Operations, in the file `ReasearchAreas2.dat`.
