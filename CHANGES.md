@@ -25,4 +25,8 @@ Added `hist1936` etc mods for a historical 1936 start:
 * `hist1936_france` = France
 
 
+# 2021-Jan-01 - Byzantium
+
+Added `byzantium` mod.
+
 /end/
