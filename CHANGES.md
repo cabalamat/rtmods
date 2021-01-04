@@ -29,4 +29,12 @@ Added `hist1936` etc mods for a historical 1936 start:
 
 Added `byzantium` mod.
 
+# 2021-Jan-04 - ROC, Japan
+
+Added:
+
+* `roc` = Republic of China mod by kongxinga
+* `japan_roc` = Japan mod by cv10 where RoC replaces Italy (incorporates `roc` mod)
+
+
 /end/
