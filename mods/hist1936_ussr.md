@@ -1,4 +1,4 @@
-# hist1936_ussr = Historical 1936 start for USSR
+# hist1936_ussr = historical 1936 start for USSR
 
 Works with the `hist1936` (Historical 1936) mod.
 

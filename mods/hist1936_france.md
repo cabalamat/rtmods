@@ -1,4 +1,4 @@
-# hist1936_france = Historical 1936 start for France
+# hist1936_france = historical 1936 start for France
 
 Works with the `hist1936` (Historical 1936) mod.
 
