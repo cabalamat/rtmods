@@ -8,3 +8,5 @@
 
 This is based on the `roc` mod and lets you play Japan. Roc replaces
 Italy.
+
+To play a game as Japan, select "Japan2" when starting a new game.
