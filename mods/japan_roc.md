@@ -1,4 +1,4 @@
-# japan_roc = Japan, with RoC replacing italy
+# japan_roc = Japan, with RoC replacing Italy
 
 * By: cv10 (uses roc mo0d by kongxinga)
 * Date: 2019-Jun-03
