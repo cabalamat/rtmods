@@ -37,4 +37,12 @@ Added:
 * `japan_roc` = Japan mod by cv10 where RoC replaces Italy (incorporates `roc` mod)
 
 
+# 2021-May-19 - Historiacal 1922
+
+I've started to add Seawolf's historical 1922 starts:
+
+* `hist1922`
+* `hist1922_germany_wv`
+
+
 /end/
