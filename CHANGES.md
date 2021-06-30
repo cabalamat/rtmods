@@ -54,6 +54,7 @@ Added seawolf's "semi historical ships" mod
 Added mod:
 
 * `hist1922_japan_wv`
+* `hist1922_japan`
 
 
 
