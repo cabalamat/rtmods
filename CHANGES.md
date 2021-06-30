@@ -49,4 +49,12 @@ I've started to add Seawolf's historical 1922 starts:
 
 Added seawolf's "semi historical ships" mod
 
+# 2021-Jun-30 - Historical 1922 (Japan)
+
+Added mod:
+
+* `hist1922_japan_wv`
+
+
+
 /end/
