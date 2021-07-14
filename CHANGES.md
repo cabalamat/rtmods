@@ -56,6 +56,12 @@ Added mod:
 * `hist1922_japan_wv`
 * `hist1922_japan`
 
+# 2021-Jul-14 - Empire of the Rising Sun
+
+Added Dizzy's Empire of the Rising Sun mod.
+This is Japan, with Netherlands and ROC as AI opponents.
+
+
 
 
 /end/
