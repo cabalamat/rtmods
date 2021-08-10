@@ -7,9 +7,12 @@ import pathlib
 
 import butil
 from butil import pr, prn, dpr, join
+
 import config
 from config import (LINUX, 
     MODS_DIR, CLEAN_RTW_DIR, MODDED_RTW_DIR)
+import modlog
+
 
 verbosity = 0
 modInfo = {}
@@ -167,6 +170,7 @@ def resetModdedRtw():
         MODDED_RTW_DIR)
     shutil.copytree(CLEAN_RTW_DIR, MODDED_RTW_DIR)
     prn("Finished!")
+    modlog.notifyReset()
     
 
 def addMod(m: str):
@@ -181,6 +185,18 @@ def addMod(m: str):
     
     copyIntoTree(modDir, MODDED_RTW_DIR)
     prn("Mod {} installed!", m)
+    modlog.notifyAdd(m)
+    
+def printModLog():
+    """ print a log of mods added """
+    ml = modlog.getModLog()
+    if len(ml)==0:
+        prn("(the mod log is empty)")
+    else:
+        prn("==timestamp=====  ==action======")
+        for timestamp, action, modName in ml:
+            prn("%s  %s %s", timestamp, action, modName)
+        #//for    
     
 
 #---------------------------------------------------------------------
@@ -198,6 +214,8 @@ def main():
         help="List mods available")
     parser.add_argument("-i", "--info", type=str, metavar="MOD",
         help="Display info about a particular mod")
+    parser.add_argument("--log", action='store_true',
+        help="Display log of mods added")
     parser.add_argument("--reset", action='store_true',
         help="Reset modded_rtw from clean_rtw (may take some time)")
     parser.add_argument("--add", type=str, metavar="MOD",
@@ -219,6 +237,8 @@ def main():
         listMods()
     elif args.info:
         infoMod(args.info)
+    elif args.log:
+        printModLog()
     elif args.reset:
         resetModdedRtw()
     elif args.add:

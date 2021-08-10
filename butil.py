@@ -35,6 +35,16 @@ def normalizePath(p: str, *pathParts: List[str]) -> str:
 normalisePath=normalizePath # alternate spelling
 join=normalizePath # it works like os.path.join, but better
 
+
+def entityExists(fn):
+    """ Does a file-like entity (eg. file, symlink, directory) exist?
+    @param fn [string] = a filename or pathname
+    @return [boolean] = True if (fn) is the filename of an existing entity.
+    """
+    fn = os.path.expanduser(fn)
+    exists = os.access(fn, os.F_OK)
+    return exists
+
 def fileExists(fn: str) -> bool:
     """ Does a file exist?
     @param fn  = a filename or pathname
