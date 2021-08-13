@@ -12,4 +12,7 @@ v3/
 .mypy_cache/
 __pycache__/
 
+#### ignore data files
+modlog/modlog.json
+
 #end

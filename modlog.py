@@ -51,7 +51,7 @@ def notifyAdd(modName: str):
 # lower level functions
 
 MODLOG_PN = butil.join(__file__, "../modlog/modlog.json")
-prn("MODLOG_PN=%s", MODLOG_PN)
+#prn("MODLOG_PN=%s", MODLOG_PN)
 
 
 def getTimeStamp() -> str:
