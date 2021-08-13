@@ -78,6 +78,11 @@ def dirExists(pn: str) -> bool:
     mode = os.stat(pn2)[stat.ST_MODE]
     return stat.S_ISDIR(mode)
 
+def createDir(pn: str):
+    """ if a directory doesn't already exist, create it """
+    if dirExists(pn): return
+    os.makedirs(pn)
+
 
 def getFilenames(dir: str, pattern:str="*") -> List[str]:
     """ Return a list of all the filenames in a directory that match a
