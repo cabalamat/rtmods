@@ -209,17 +209,17 @@ def main():
     parser = argparse.ArgumentParser(description=
         "*** Rule the Mods -- a mod manager for RTW2 ***")
     parser.add_argument("-v", "--verbose", action="count",
-        help="Increase output verbosity")
+        help="increase output verbosity")
     parser.add_argument("-l", "--list", action='store_true',
-        help="List mods available")
+        help="list mods available")
     parser.add_argument("-i", "--info", type=str, metavar="MOD",
-        help="Display info about a particular mod")
+        help="display info about a particular mod")
     parser.add_argument("--log", action='store_true',
-        help="Display log of mods added")
+        help="display log of mods added")
     parser.add_argument("--reset", action='store_true',
-        help="Reset modded_rtw from clean_rtw (may take some time)")
+        help="reset modded_rtw from clean_rtw (may take some time)")
     parser.add_argument("--add", type=str, metavar="MOD",
-        help="Add a mod to modded_rtw")
+        help="add a mod to modded_rtw")
     
     args = parser.parse_args()
     
