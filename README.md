@@ -107,14 +107,12 @@ Then play the game by running the RTW executable in `C:\cab\modded_rtw\RTW2.exe`
 
 I might add a web-based interface for it, running on localhost.
 
-This would list the mods available, display their descriptions and any instructions
-for them. There would be hyperlinks to the mod's homepage, if any.
+This would list the mods available, display their descriptions and 
+any instructions for them. There would be hyperlinks to the mod's 
+homepage, if any.
 
-At the moment Rtmods doesn't remember what mods have been added to `modded_rtw\`.
-This feature could be added, and then the program would be able to
-display a log of what mods you have already added.
-
-There will also be a short guide on how to write a mod and put it on the system.
+There will also be a short guide on how to write a mod and put it 
+on the system.
 
 
 /end/
