@@ -20,7 +20,9 @@ modInfo = {}
 #---------------------------------------------------------------------
 # utility functions
 
-def sorted_kv(d: Dict)->List[Tuple[Any,Any]]: 
+def sorted_kv(d: Dict) -> List[Tuple[Any,Any]]: 
+    """ convert a dictionary to a list of key-value
+    pairs, sorted by keys """
     result = []
     for k in sorted(d.keys()):
         v = d[k]
@@ -36,7 +38,7 @@ def padRight(s: str, n: int) -> str:
 
 def forceMakeDestDir(destFile: pathlib.Path):
     """ force the creation of all directories above the file (destFile).
-    If the directories already exist, silently do nothing.
+    If the directories already exist, do nothing.
     """
     destDir = destFile.parent
     destDir.mkdir(parents=True, exist_ok=True)
@@ -72,7 +74,7 @@ def copyIntoTree(src: str, dst: str):
 #---------------------------------------------------------------------
 
 def isValidModName(mn: str) -> bool:
-    """ Is (mn) a valid module name? Valid mod names:
+    """ Is (mn) a valid modification name? Valid mod names:
     * are 1-32 chars long
     * contain only lower case letters (a-z), digits (0-9) and the 
       underline ("_") char 
