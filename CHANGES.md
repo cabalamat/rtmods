@@ -61,7 +61,9 @@ Added mod:
 Added Dizzy's Empire of the Rising Sun mod.
 This is Japan, with Netherlands and ROC as AI opponents.
 
+# 2025-Jul-21 - Dizzy's AI battleships
 
+Added`dizzy_bb` mod containing Dizzy's AI battleships.
 
 
 /end/
