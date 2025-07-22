@@ -16,6 +16,7 @@ import modlog
 
 verbosity = 0
 modInfo = {}
+modFullInfo = {}
 
 #---------------------------------------------------------------------
 # utility functions
@@ -107,9 +108,11 @@ def getModNames() -> List[str]:
     #//for modDoc  
     return modNames
 
-def getModDesc(modName: str) -> str:
+def getModDesc(modName: str) -> Tuple[str,str]:
     """ Get the description of a mod from its name. The description
     comes from the first line of the mod's documentation file.
+
+    returns a tuple: (firstLine, fullDescription)
     """
     modFnP = pathlib.Path(MODS_DIR) / (modName+".md")
     modFn = str(modFnP)
@@ -118,7 +121,7 @@ def getModDesc(modName: str) -> str:
     s = line1[1:].strip()
     if s.startswith(modName):
         s = s[len(modName):].strip()
-    return s
+    return s, modDoc
     
 def makeModList(): 
     """ creates the value of (modInfo) based on contents of the mod/ 
@@ -131,11 +134,13 @@ def makeModList():
     * contain only lower case letters (a-z), digits (0-9) and the 
       underline ("_") char
     """   
-    global modInfo
+    global modInfo, modFullInfo
     modNames = getModNames()
-    #dpr("modNames=%r", modNames)
-    modInfo = dict((modName, getModDesc(modName)) 
-                   for modName in modNames)
+    for modName in modNames:
+        shortInfo, fullInfo = getModDesc(modName)
+        modInfo[modName] = shortInfo
+        modFullInfo[modName] = fullInfo
+
     #dpr("modInfo=%r", modInfo)
 
 #---------------------------------------------------------------------
@@ -151,8 +156,10 @@ def listMods():
 def infoMod(m: str):
     """ print information about mod (m) """
     if m in modInfo:
-        description = modInfo[m]
-        prn("Information on modification: {}\n{}", m, description)
+        shortInfo = modInfo[m]
+        fullInfo = modFullInfo[m]
+        prn("Information on modification: {} {}\n{}",
+            m, shortInfo, fullInfo)
     else:
         prn("There is no mod '{}'", m)
 

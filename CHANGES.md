@@ -65,5 +65,13 @@ This is Japan, with Netherlands and ROC as AI opponents.
 
 Added`dizzy_bb` mod containing Dizzy's AI battleships.
 
+# 2025-Jul-21 - Expanded --info
+
+The `--info` command now prints the mod's markdown file.
+
+# 2025-Jul-22 - Netherlands
+
+Added Netherlands mod.
+
 
 /end/
