@@ -73,5 +73,10 @@ The `--info` command now prints the mod's markdown file.
 
 Added Netherlands mod.
 
+# 2025-Jul-23 - Firepower
+
+Added firepower_etc mod, which increases gun RoF and accuracy
+plus invasion range.
+
 
 /end/
