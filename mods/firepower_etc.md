@@ -18,8 +18,8 @@ Increasing ROF and accuracy is to make make gunfire more useful because
 in the early game (before c. 1910) it is ineffective which means lots of
 small ships armed with torpedoes win.
 
-I have added invasion range to the ifmod as it is also affects the same
-file (`ResearchAreas2.dat`).
+I have added the changes from the `invasion_range` mod to the `firepower_etc` mod as
+they both use the same file (`ResearchAreas2.dat`).
 
 ### Increased rate of fire
 
@@ -50,7 +50,7 @@ Calibre | Original | New
 
 ### Accuracy
 
-This is deterrmined in `ResearchAreas2.dat` in the `[Fire control 3]`
+This is determined in `ResearchAreas2.dat` in the `[Fire control 3]`
 section. I have moved some of the years forward:
 
 Advance                     | Original | New
